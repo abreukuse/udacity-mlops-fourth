@@ -1,17 +1,17 @@
 # Script to train machine learning model.
 
 import pandas as pd
+from sklearn.model_selection import train_test_split
 from ml.data import process_data
 from ml.model import (
-    train_model
+    train_model,
+    save_model
 )
-from sklearn.model_selection import train_test_split
 from config import (
     DATA_PATH,
+    MODEL_PATH,
     HYPERPARAMETERS
 )
-
-# Add the necessary imports for the starter code.
 
 # Add code to load in the data.
 data = pd.read_csv(DATA_PATH)
@@ -47,10 +47,13 @@ X_test, y_test, _, _ = process_data(
 )
 
 # Train and save a model.
-print("training...")
 model = train_model(
     X_train=X_train,
     y_train=y_train,
     hyperparameters=HYPERPARAMETERS
 )
-print("done.")
+
+save_model(
+    model=model,
+    output_path=MODEL_PATH
+)
