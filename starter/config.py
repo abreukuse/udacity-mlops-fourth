@@ -14,5 +14,6 @@ HYPERPARAMETERS = {
     'min_samples_leaf': 2,
     'max_features': 'sqrt',
     'criterion': 'gini',
-    'class_weight': 'balanced'
+    'class_weight': 'balanced',
+    'random_state': 42
 }
