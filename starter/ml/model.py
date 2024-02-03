@@ -60,6 +60,28 @@ def save_model(model, encoder, output_path):
         pickle.dump(encoder, encoder_file)
 
 
+def load_model(model_dir):
+    """
+    Load a machine learning model and an encoder from the specified output path.
+
+    Parameters:
+    - model_dir (str): The directory path containing the saved model and encoder files.
+
+    Returns:
+    tuple: A tuple containing the loaded machine learning model and encoder.
+
+    """
+    model_path = os.path.join(model_dir, 'model.pkl')
+    with open(model_path, 'rb') as model_file:
+        model = pickle.load(model_file)
+
+    encoder_path = os.path.join(model_dir, 'encoder.pkl')
+    with open(encoder_path, 'rb') as encoder_file:
+        encoder = pickle.load(encoder_file)
+
+    return model, encoder
+
+
 def compute_model_metrics(y, preds):
     """
     Validates the trained machine learning model using precision, recall, and F1.
