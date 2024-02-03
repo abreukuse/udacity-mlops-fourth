@@ -2,9 +2,13 @@
 
 import pandas as pd
 from ml.data import process_data
+from ml.model import (
+    train_model
+)
 from sklearn.model_selection import train_test_split
 from config import (
-    DATA_PATH
+    DATA_PATH,
+    HYPERPARAMETERS
 )
 
 # Add the necessary imports for the starter code.
@@ -43,3 +47,10 @@ X_test, y_test, _, _ = process_data(
 )
 
 # Train and save a model.
+print("training...")
+model = train_model(
+    X_train=X_train,
+    y_train=y_train,
+    hyperparameters=HYPERPARAMETERS
+)
+print("done.")
