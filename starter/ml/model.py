@@ -1,3 +1,4 @@
+import os
 import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.tree import DecisionTreeClassifier
@@ -32,14 +33,16 @@ def train_model(X_train, y_train, hyperparameters):
     return model
 
 
-def save_model(model, output_path):
+def save_model(model, encoder, output_path):
     """
-    Save a machine learning model using pickle.
+    Save a machine learning model and categorical encoder using pickle.
 
     Inputs
     ------
-    - model : 
+    - model : sklearn.tree._classes.DecisionTreeClassifier
         The machine learning model to be saved.
+    - encoder : sklearn.preprocessing._encoders.OneHotEncoder
+        Trained sklearn OneHotEncoder
     - output_path : str
         The file path where the model will be saved.
 
@@ -48,8 +51,13 @@ def save_model(model, output_path):
     None
 
     """
-    with open(output_path, 'wb') as pkl_file:
-        pickle.dump(model, pkl_file)
+    model_path = os.path.join(output_path, 'model.pkl')
+    with open(model_path, 'wb') as model_file:
+        pickle.dump(model, model_file)
+
+    encoder_path = os.path.join(output_path, 'encoder.pkl')
+    with open(encoder_path, 'wb') as encoder_file:
+        pickle.dump(encoder, encoder_file)
 
 
 def compute_model_metrics(y, preds):
