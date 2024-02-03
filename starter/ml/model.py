@@ -1,3 +1,4 @@
+import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.tree import DecisionTreeClassifier
 
@@ -29,6 +30,26 @@ def train_model(X_train, y_train, hyperparameters):
     )
 
     return model
+
+
+def save_model(model, output_path):
+    """
+    Save a machine learning model using pickle.
+
+    Inputs
+    ------
+    - model : 
+        The machine learning model to be saved.
+    - output_path : str
+        The file path where the model will be saved.
+
+    Returns
+    -------
+    None
+
+    """
+    with open(output_path, 'wb') as pkl_file:
+        pickle.dump(model, pkl_file)
 
 
 def compute_model_metrics(y, preds):
