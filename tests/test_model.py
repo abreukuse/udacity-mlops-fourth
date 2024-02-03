@@ -25,6 +25,7 @@ def model():
 
     return model_
 
+
 def test_train_model():
     """
     Test 'train_model' function, expecting a DecisionTreeClassifier.
@@ -32,7 +33,7 @@ def test_train_model():
 
     X_train = np.random.rand(50, 10)
     y_train = np.random.randint(2, size=(50, 1))
-    
+
     model = train_model(
         X_train,
         y_train,
@@ -44,7 +45,8 @@ def test_train_model():
 
 def test_compute_model_metrics():
     """
-    Test compute_model_metrics with perfect predictions, expecting precision, recall, and fbeta to be 1 and of type float.
+    Test compute_model_metrics with perfect predictions,
+    expecting precision, recall, and fbeta to be 1 and of type float.
     """
 
     y_true = np.array([1, 0, 1, 0, 1])

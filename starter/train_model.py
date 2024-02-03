@@ -16,7 +16,8 @@ from config import (
 # Add code to load in the data.
 data = pd.read_csv(DATA_PATH)
 
-# Optional enhancement, use K-fold cross validation instead of a train-test split.
+# Optional enhancement, use K-fold cross validation instead of a
+# train-test split.
 train, test = train_test_split(data, test_size=0.20)
 
 cat_features = [
@@ -30,19 +31,19 @@ cat_features = [
     "native-country",
 ]
 X_train, y_train, encoder, lb = process_data(
-    X=train, 
-    categorical_features=cat_features, 
-    label="salary", 
+    X=train,
+    categorical_features=cat_features,
+    label="salary",
     training=True
 )
 
 # Proces the test data with the process_data function.
 X_test, y_test, _, _ = process_data(
-    X=test, 
-    categorical_features=cat_features, 
-    label="salary", 
-    training=False, 
-    encoder=encoder, 
+    X=test,
+    categorical_features=cat_features,
+    label="salary",
+    training=False,
+    encoder=encoder,
     lb=lb
 )
 
