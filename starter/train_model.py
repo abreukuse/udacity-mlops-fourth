@@ -9,7 +9,6 @@ from ml.model import (
 )
 from config import (
     DATA_PATH,
-    MODEL_DIR,
     HYPERPARAMETERS
 )
 
@@ -56,6 +55,5 @@ model = train_model(
 
 save_model(
     model=model,
-    encoder=encoder,
-    output_path=MODEL_DIR
+    encoder=encoder
 )
