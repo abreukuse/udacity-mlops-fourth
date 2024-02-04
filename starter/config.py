@@ -6,7 +6,9 @@ DATA_PATH = os.path.join(DATA_DIR, DATA_FILE)
 
 MODEL_DIR = "model"
 MODEL_FILE = "model.pkl"
+ENCODER_FILE = "encoder.pkl"
 MODEL_PATH = os.path.join(MODEL_DIR, MODEL_FILE)
+ENCODER_PATH = os.path.join(MODEL_DIR, ENCODER_FILE)
 
 HYPERPARAMETERS = {
     'max_depth': 10,
