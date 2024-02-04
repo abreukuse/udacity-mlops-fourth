@@ -2,6 +2,10 @@ import os
 import pickle
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.tree import DecisionTreeClassifier
+from starter.config import (
+    MODEL_PATH,
+    ENCODER_PATH
+)
 
 # Optional: implement hyperparameter tuning.
 
@@ -35,7 +39,7 @@ def train_model(X_train, y_train, hyperparameters):
     return model
 
 
-def save_model(model, encoder, output_path):
+def save_model(model, encoder):
     """
     Save a machine learning model and categorical encoder using pickle.
 
@@ -45,39 +49,34 @@ def save_model(model, encoder, output_path):
         The machine learning model to be saved.
     - encoder : sklearn.preprocessing._encoders.OneHotEncoder
         Trained sklearn OneHotEncoder
-    - output_path : str
-        The file path where the model will be saved.
 
     Returns
     -------
     None
 
     """
-    model_path = os.path.join(output_path, 'model.pkl')
+    model_path = MODEL_PATH
     with open(model_path, 'wb') as model_file:
         pickle.dump(model, model_file)
 
-    encoder_path = os.path.join(output_path, 'encoder.pkl')
+    encoder_path = ENCODER_PATH
     with open(encoder_path, 'wb') as encoder_file:
         pickle.dump(encoder, encoder_file)
 
 
-def load_model(model_dir):
+def load_model():
     """
     Load a machine learning model and an encoder from the specified output path.
-
-    Parameters:
-    - model_dir (str): The directory path containing the saved model and encoder files.
 
     Returns:
     tuple: A tuple containing the loaded machine learning model and encoder.
 
     """
-    model_path = os.path.join(model_dir, 'model.pkl')
+    model_path = MODEL_PATH
     with open(model_path, 'rb') as model_file:
         model = pickle.load(model_file)
 
-    encoder_path = os.path.join(model_dir, 'encoder.pkl')
+    encoder_path = ENCODER_PATH
     with open(encoder_path, 'rb') as encoder_file:
         encoder = pickle.load(encoder_file)
 
