@@ -20,4 +20,16 @@ HYPERPARAMETERS = {
     'random_state': 42
 }
 
+CATEGORICAL_FEATURES = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+]
+
 FEATURE_SLICE = "education"
+TARGET_VARIABLE = "salary"
