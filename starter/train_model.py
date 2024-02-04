@@ -9,7 +9,8 @@ from ml.model import (
 )
 from config import (
     DATA_PATH,
-    HYPERPARAMETERS
+    HYPERPARAMETERS,
+    CATEGORICAL_FEATURES
 )
 
 # Add code to load in the data.
@@ -23,19 +24,9 @@ train, test = train_test_split(
     random_state=42
 )
 
-cat_features = [
-    "workclass",
-    "education",
-    "marital-status",
-    "occupation",
-    "relationship",
-    "race",
-    "sex",
-    "native-country",
-]
 X_train, y_train, encoder, lb = process_data(
     X=train,
-    categorical_features=cat_features,
+    categorical_features=CATEGORICAL_FEATURES,
     label="salary",
     training=True
 )
@@ -43,7 +34,7 @@ X_train, y_train, encoder, lb = process_data(
 # Proces the test data with the process_data function.
 X_test, y_test, _, _ = process_data(
     X=test,
-    categorical_features=cat_features,
+    categorical_features=CATEGORICAL_FEATURES,
     label="salary",
     training=False,
     encoder=encoder,
