@@ -1,97 +1,97 @@
 	Variable: education
 
-			Value: Some-college
-				- Precision: 0.46966731898238745
-				- Recall: 0.8664259927797834
-				- Fbeta: 0.6091370558375635
-			
+Value: Some-college
+	- Precision: 0.46966731898238745
+	- Recall: 0.8664259927797834
+	- Fbeta: 0.6091370558375635
 
-			Value: HS-grad
-				- Precision: 0.37088607594936707
-				- Recall: 0.8492753623188406
-				- Fbeta: 0.5162995594713656
-			
 
-			Value: Bachelors
-				- Precision: 0.6441515650741351
-				- Recall: 0.8688888888888889
-				- Fbeta: 0.7398297067171239
-			
+Value: HS-grad
+	- Precision: 0.37088607594936707
+	- Recall: 0.8492753623188406
+	- Fbeta: 0.5162995594713656
 
-			Value: Masters
-				- Precision: 0.7807017543859649
-				- Recall: 0.8599033816425121
-				- Fbeta: 0.8183908045977012
-			
 
-			Value: Assoc-acdm
-				- Precision: 0.45977011494252873
-				- Recall: 0.851063829787234
-				- Fbeta: 0.5970149253731344
-			
+Value: Bachelors
+	- Precision: 0.6441515650741351
+	- Recall: 0.8688888888888889
+	- Fbeta: 0.7398297067171239
 
-			Value: 7th-8th
-				- Precision: 0.16666666666666666
-				- Recall: 0.16666666666666666
-				- Fbeta: 0.16666666666666666
-			
 
-			Value: 11th
-				- Precision: 0.1694915254237288
-				- Recall: 0.9090909090909091
-				- Fbeta: 0.2857142857142857
-			
+Value: Masters
+	- Precision: 0.7807017543859649
+	- Recall: 0.8599033816425121
+	- Fbeta: 0.8183908045977012
 
-			Value: Assoc-voc
-				- Precision: 0.46153846153846156
-				- Recall: 0.8571428571428571
-				- Fbeta: 0.6
-			
 
-			Value: Prof-school
-				- Precision: 0.7884615384615384
-				- Recall: 0.9761904761904762
-				- Fbeta: 0.8723404255319148
-			
+Value: Assoc-acdm
+	- Precision: 0.45977011494252873
+	- Recall: 0.851063829787234
+	- Fbeta: 0.5970149253731344
 
-			Value: 9th
-				- Precision: 0.08333333333333333
-				- Recall: 0.6666666666666666
-				- Fbeta: 0.14814814814814814
-			
 
-			Value: 5th-6th
-				- Precision: 0.0
-				- Recall: 0.0
-				- Fbeta: 0.0
-			
+Value: 7th-8th
+	- Precision: 0.16666666666666666
+	- Recall: 0.16666666666666666
+	- Fbeta: 0.16666666666666666
 
-			Value: 10th
-				- Precision: 0.14084507042253522
-				- Recall: 0.8333333333333334
-				- Fbeta: 0.24096385542168677
-			
 
-			Value: Doctorate
-				- Precision: 0.8
-				- Recall: 0.9122807017543859
-				- Fbeta: 0.8524590163934427
-			
+Value: 11th
+	- Precision: 0.1694915254237288
+	- Recall: 0.9090909090909091
+	- Fbeta: 0.2857142857142857
 
-			Value: 12th
-				- Precision: 0.18181818181818182
-				- Recall: 0.8
-				- Fbeta: 0.2962962962962963
-			
 
-			Value: 1st-4th
-				- Precision: 0.0
-				- Recall: 1.0
-				- Fbeta: 0.0
-			
+Value: Assoc-voc
+	- Precision: 0.46153846153846156
+	- Recall: 0.8571428571428571
+	- Fbeta: 0.6
 
-			Value: Preschool
-				- Precision: 1.0
-				- Recall: 1.0
-				- Fbeta: 1.0
-			
+
+Value: Prof-school
+	- Precision: 0.7884615384615384
+	- Recall: 0.9761904761904762
+	- Fbeta: 0.8723404255319148
+
+
+Value: 9th
+	- Precision: 0.08333333333333333
+	- Recall: 0.6666666666666666
+	- Fbeta: 0.14814814814814814
+
+
+Value: 5th-6th
+	- Precision: 0.0
+	- Recall: 0.0
+	- Fbeta: 0.0
+
+
+Value: 10th
+	- Precision: 0.14084507042253522
+	- Recall: 0.8333333333333334
+	- Fbeta: 0.24096385542168677
+
+
+Value: Doctorate
+	- Precision: 0.8
+	- Recall: 0.9122807017543859
+	- Fbeta: 0.8524590163934427
+
+
+Value: 12th
+	- Precision: 0.18181818181818182
+	- Recall: 0.8
+	- Fbeta: 0.2962962962962963
+
+
+Value: 1st-4th
+	- Precision: 0.0
+	- Recall: 1.0
+	- Fbeta: 0.0
+
+
+Value: Preschool
+	- Precision: 1.0
+	- Recall: 1.0
+	- Fbeta: 1.0
+
