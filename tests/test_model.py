@@ -19,9 +19,7 @@ from starter.ml.model import (
 
 @pytest.fixture
 def model():
-    model_, encoder_ = load_model(
-        model_dir=MODEL_DIR
-    )
+    model_, encoder_ = load_model()
 
     return model_
 
