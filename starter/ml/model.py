@@ -4,7 +4,8 @@ from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.tree import DecisionTreeClassifier
 from starter.config import (
     MODEL_PATH,
-    ENCODER_PATH
+    ENCODER_PATH,
+    BINARIZER_PATH
 )
 
 # Optional: implement hyperparameter tuning.
@@ -39,7 +40,7 @@ def train_model(X_train, y_train, hyperparameters):
     return model
 
 
-def save_model(model, encoder):
+def save_model(model, encoder, lb):
     """
     Save a machine learning model and categorical encoder using pickle.
 
@@ -49,6 +50,8 @@ def save_model(model, encoder):
         The machine learning model to be saved.
     - encoder : sklearn.preprocessing._encoders.OneHotEncoder
         Trained sklearn OneHotEncoder
+    -lb : sklearn.preprocessing._label.LabelBinarizer
+        Trained LabelBinarizer
 
     Returns
     -------
@@ -63,13 +66,17 @@ def save_model(model, encoder):
     with open(encoder_path, 'wb') as encoder_file:
         pickle.dump(encoder, encoder_file)
 
+    binarizer_path = BINARIZER_PATH
+    with open(binarizer_path, 'wb') as binarizer_file:
+        pickle.dump(lb, binarizer_file)
+
 
 def load_model():
     """
     Load a machine learning model and an encoder from the specified output path.
 
     Returns:
-    tuple: A tuple containing the loaded machine learning model and encoder.
+    tuple: A tuple containing the loaded machine learning model, encoder and label binarizer.
 
     """
     model_path = MODEL_PATH
@@ -80,7 +87,11 @@ def load_model():
     with open(encoder_path, 'rb') as encoder_file:
         encoder = pickle.load(encoder_file)
 
-    return model, encoder
+    binarizer_path = BINARIZER_PATH
+    with open(binarizer_path, 'rb') as binarizer_file:
+        lb = pickle.load(binarizer_file)
+
+    return model, encoder, lb
 
 
 def compute_model_metrics(y, preds):
