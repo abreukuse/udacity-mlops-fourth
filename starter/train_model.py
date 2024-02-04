@@ -59,5 +59,6 @@ model = train_model(
 
 save_model(
     model=model,
-    encoder=encoder
+    encoder=encoder,
+    lb=lb
 )
