@@ -6,8 +6,7 @@ import pytest
 import numpy as np
 from sklearn.tree import DecisionTreeClassifier
 from starter.config import (
-    HYPERPARAMETERS,
-    MODEL_DIR
+    HYPERPARAMETERS
 )
 from starter.ml.model import (
     train_model,
