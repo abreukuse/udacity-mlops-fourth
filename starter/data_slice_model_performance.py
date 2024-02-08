@@ -20,6 +20,22 @@ from starter.config import (
 
 
 def data_slice_validation():
+    """
+    Data slice validation.
+
+    This function validates a specific data slice if the specified slice is present in the provided categorical features.
+    Data is read from a CSV file, and a trained model is loaded. The data is split into training and testing sets. For each
+    unique value in the feature slice, the function processes the data, performs inference using the loaded model, and computes
+    model performance metrics. The results are written to an output file 'slice_output.txt'.
+
+    If the feature slice is not specified correctly, a warning is displayed.
+
+    Note:
+        Ensure to have properly configured the 'FEATURE_SLICE' and 'CATEGORICAL_FEATURES' variables in 'config.py'.
+
+    Returns:
+        None
+    """
     if FEATURE_SLICE in CATEGORICAL_FEATURES:
         data = pd.read_csv(DATA_PATH)
         model, encoder, binarizer = load_model()
