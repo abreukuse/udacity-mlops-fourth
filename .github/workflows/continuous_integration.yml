@@ -1,4 +1,4 @@
-name: Run pytest and flake8
+name: Continuous Integration
 
 on:
   push:
