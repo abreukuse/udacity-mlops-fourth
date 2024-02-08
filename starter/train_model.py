@@ -10,7 +10,8 @@ from ml.model import (
 from config import (
     DATA_PATH,
     HYPERPARAMETERS,
-    CATEGORICAL_FEATURES
+    CATEGORICAL_FEATURES,
+    TARGET_VARIABLE
 )
 
 # Add code to load in the data.
@@ -27,7 +28,7 @@ train, test = train_test_split(
 X_train, y_train, encoder, lb = process_data(
     X=train,
     categorical_features=CATEGORICAL_FEATURES,
-    label="salary",
+    label=TARGET_VARIABLE,
     training=True
 )
 
@@ -35,7 +36,7 @@ X_train, y_train, encoder, lb = process_data(
 X_test, y_test, _, _ = process_data(
     X=test,
     categorical_features=CATEGORICAL_FEATURES,
-    label="salary",
+    label=TARGET_VARIABLE,
     training=False,
     encoder=encoder,
     lb=lb
