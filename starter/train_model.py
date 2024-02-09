@@ -5,7 +5,9 @@ from sklearn.model_selection import train_test_split
 from ml.data import process_data
 from ml.model import (
     train_model,
-    save_model
+    save_model,
+    compute_model_metrics,
+    inference
 )
 from config import (
     DATA_PATH,
@@ -47,6 +49,22 @@ model = train_model(
     X_train=X_train,
     y_train=y_train,
     hyperparameters=HYPERPARAMETERS
+)
+
+y_pred = model.predict(X_test)
+precision, recall, fbeta = compute_model_metrics(
+    y=y_test,
+    preds=y_pred
+)
+
+print(
+    f"""
+Model performance on test data.
+
+    - Precision: {round(precision, 2)}
+    - Recall: {round(recall, 2)}
+    - Fbeta: {round(fbeta, 2)}
+"""
 )
 
 save_model(
