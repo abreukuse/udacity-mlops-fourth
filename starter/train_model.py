@@ -51,7 +51,7 @@ model = train_model(
     hyperparameters=HYPERPARAMETERS
 )
 
-y_pred = model.predict(X_test)
+y_pred = inference(model, X_test)
 precision, recall, fbeta = compute_model_metrics(
     y=y_test,
     preds=y_pred
